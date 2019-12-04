@@ -8,6 +8,8 @@ var longerInput1 = ["R75","D30","R83","U83","L12","D49","R71","U7","L72"];
 var longerInput2= ["U62","R66","U55","R34","D71","R55","D58","R83"];
 
 function manhattan(input1, input2){
+  console.time("day3");
+
   var coordArray1 = ["0:0:0"];
   var coordArray2 = ["0:0:0"];
 
@@ -27,6 +29,8 @@ function manhattan(input1, input2){
 
     var secondAnswer = runSecondDay();
     console.log('day 3 part 2. answer: '+ secondAnswer);
+
+    console.timeEnd('day3');
 }
 
 function processCoords(instruction, coordArray){

@@ -78,10 +78,11 @@ function calcValues(input, currentIndex){
 }
 
 function run(){
+    console.time("day2");
     let answer = execute(inputPt1);
     console.log('day 2 part 1 answer -- ' + answer);
     loopExecute(input);
-
+    console.timeEnd('day2');
 }
 
 run();
