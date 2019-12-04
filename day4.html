@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script src="./day4browserScript.js"></script>
+    <style>
+    div{ padding-bottom: 10px;}</style>
+</head>
+<body>
+<h1>Day 4 Part 1</h1>
+<div>
+    --- Day 4: Secure Container ---</div><div>
+        You arrive at the Venus fuel depot only to discover it's protected by a password. The Elves had written the password on a sticky note, but someone threw it out.
+        </div><div>
+            However, they do remember a few key facts about the password:
+        </div><ul><div>
+            It is a six-digit number.
+        </div><div>
+            The value is within the range given in your puzzle input.
+        </div><div>
+            Two adjacent digits are the same (like 22 in 122345).
+        </div><div>
+            Going from left to right, the digits never decrease; they only ever increase or stay the same (like 111123 or 135679).
+        </div></ul><div> </div><div>
+            Other than the range rule, the following are true:
+    </div><ul><div>
+        111111 meets these criteria (double 11, never decreases).
+    </div><div>
+        223450 does not meet these criteria (decreasing pair of digits 50).
+    </div><div>
+        123789 does not meet these criteria (no double).
+        </div></ul><div> </div><div></div>
+            How many different passwords within the range given in your puzzle input meet these criteria?
+</div>
+<h2 id="part1">Number of Passwords in Range: </div>
+<h1>Day 4 Part 2</h1>
+<div>
+    --- Part Two ---</div><div>
+    An Elf just remembered one more important detail: the two adjacent matching digits are not part of a larger group of matching digits.
+</div><div>
+    Given this additional criterion, but still ignoring the range rule, the following are now true:
+</div><ul><div>
+    112233 meets these criteria because the digits never decrease and all repeated digits are exactly two digits long.
+</div><div>
+    123444 no longer meets the criteria (the repeated 44 is part of a larger group of 444).
+</div><div>
+    111122 meets the criteria (even though 1 is repeated more than twice, it still contains a double 22).
+    </div></ul></div><div>
+    How many different passwords within the range given in your puzzle input meet all of the criteria?
+</div>
+<h2 id="part2">Number of Passwords in Range: </div>
+</body>
+</html>
