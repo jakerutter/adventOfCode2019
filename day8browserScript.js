@@ -11,7 +11,11 @@ function run(input){
   var answer;
   answer = getAnswer(bestLayer);
 
-  return answer;
+  document.getElementById('part1').innerHTML += answer;
+
+  var answer2 = filterImage(layers);
+
+  prettyPrintAnswer(answer2);
 }
 
 
@@ -68,7 +72,61 @@ function getAnswer(layer){
   return answer;
 }
 
+
+function filterImage(bestLayer){
+  let newLayer = [];
+  for(let i=0; i<25; i++){
+    newLayer.push("2");
+  }
+
+  let index = 0;
+  let len = 150;
+  let splitBestLayer = [];
+  for(let a=0; a<bestLayer.length; a++){
+    
+    while (index + len <= bestLayer[a].length){
+      let sub = bestLayer[a].substring(len-150, len);
+
+      splitBestLayer.push(sub);
+  
+      len += 150;
+    }
+    len = 150;
+  }
+  
+  for(let b=0; b<splitBestLayer.length; b++){
+    
+    for(let c=0; c<splitBestLayer[b].length; c++){
+      let currentColor = splitBestLayer[b][c];
+      if (b == 0 || newLayer[c] == "2"){
+        newLayer[c] = currentColor;
+      }
+    }
+
+  }
+  return newLayer;
+}
+
+
+function prettyPrintAnswer(answer){
+
+  let k = 0;
+  document.getElementById('part2').innerHTML += '<br />';
+  while (k < answer.length){
+
+    for(let o=0; o<25; o++){
+      let current = answer[o+k];
+      current = current == 1 ? '#' : "o";
+      document.getElementById('part2').innerHTML += current;
+    }
+    document.getElementById('part2').innerHTML += '<br />';
+    console.log('\n');
+    k+=25;
+
+  }
+
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-  let part1 = run(input);
-  document.getElementById('part1').innerHTML += part1;
+  run(input);
 });
